@@ -6,7 +6,7 @@
     Create new post
 </div>
     <div class="card-body">
-    @include('inc.feedback')
+{{--    @include('inc.feedback')--}}
     <form action="{{route('post.store')}}" method="post" enctype="multipart/form-data">
             @csrf
 
@@ -28,8 +28,19 @@
 
         <div class="form-group">
             <label for="image">Featured image : </label>
-            <input type="file" name="featured" class="form-control" id="image" value="{{old('featured')}}>
+            <input type="file" name="featured" class="form-control" id="image" value="{{old('featured')}}">
 
+        </div>
+
+        <div class="form-group">
+            <label for="tags">Select tags :</label>
+            @foreach($tags as $tag)
+                <div class="form-check">
+                        <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox"  name="tags[]" value="{{$tag->id}}">{{$tag->name}}
+                        </label>
+                </div>
+            @endforeach
         </div>
 
         <div class="form-group">

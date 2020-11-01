@@ -21,8 +21,16 @@ Auth::routes();
 
 Route::group(['prefix'=>'admin' ,'middleware'=>'auth'], function (){
     Route::get('/home', 'HomeController@index')->name('home');
+    //Always put the resource after your custom link because defining a resource overrides the other url, the only resource link will be taken under account
+    Route::get('/post/trashed', 'PostsController@trashed')->name('post.trashed');
+    Route::get('/post/restore/{post}', 'PostsController@restore')->name('post.restore');
+
+    Route::resource('/tag', 'TagsController');
     Route::resource('/post', 'PostsController');
+
+
     Route::resource('/category', 'CategoriesController');
+
 
 
 });
