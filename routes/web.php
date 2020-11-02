@@ -13,9 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+Route::get('/', 'FrontEndController@index');
+Route::get('/{slug}', 'FrontEndController@singlePost')->name('post.single');
+
 
 Auth::routes();
 
@@ -25,7 +28,21 @@ Route::group(['prefix'=>'admin' ,'middleware'=>'auth'], function (){
     Route::get('/post/trashed', 'PostsController@trashed')->name('post.trashed');
     Route::get('/post/restore/{post}', 'PostsController@restore')->name('post.restore');
 
+    // We injecting middleware admin in the construct method in users controller that way all the method will be accessed only by an admin
+    Route::get('/user/makeAdmin/{user}', 'UsersController@admin')->name('user.admin');
+    Route::get('/user/makeDefault/{user}', 'UsersController@revoke')->name('user.revoke');
+
+
+
+    Route::resource('/user', 'UsersController');
+
+    Route::resource('/profile', 'ProfilesController');
+
+    Route::get('/settings', 'SettingsController@index')->name('settings.index');
+    Route::post('/settings/update', 'SettingsController@update')->name('settings.update');
+
     Route::resource('/tag', 'TagsController');
+
     Route::resource('/post', 'PostsController');
 
 

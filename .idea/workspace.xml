@@ -2,37 +2,294 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55217dbe-a2ea-4713-9ef2-93650aed4180" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/TagsController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Profile.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Tag.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_11_01_150922_create_tags_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_11_01_151806_create_post_tag_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_11_01_222937_create_profiles_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/avatars/default.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/posts/16042424465.5GB.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/posts/php2EE6.tmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/FrontEndController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ProfilesController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/SettingsController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/UsersController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/Admin.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Setting.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog-theme/category.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog-theme/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog-theme/single.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_11_02_163541_create_settings_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeders/SettingTableSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/css/crumina-fonts.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/css/custom-styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/css/fonts.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/css/grid.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/css/jquery.mCustomScrollbar.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/css/mCSB_buttons.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/css/magnific-popup.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/css/normalize.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/css/primary-menu.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/css/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/css/swiper.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/fonts/fontawesome-webfont3295.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/fonts/fontawesome-webfont3295.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/fonts/fontawesome-webfont3295.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/fonts/fontawesome-webfont3295.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/fonts/fontawesome-webfont3295.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/fonts/fontawesome-webfontd41d.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/fonts/seosightbe82.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/fonts/seosightbe82.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/fonts/seosightbe82.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/404-img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/amex.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/analysis.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/avatar-b-details.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/avatar-bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/avatar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/avatar1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/avatar2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/avatar3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/avatar4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/avatar5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/avatar6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/avatar7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/avatar9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/background-element.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/bg-boxed-black.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/bg-boxed-blue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/bg-boxed-dark.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/bg-boxed-light.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/bg-boxed-primary.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/bg-boxed-red.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/blog-details-author.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/blog-details.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/book1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/book2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/book3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/book4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/book5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/book6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/book7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/book8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/book9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/cart-product4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/cart-product5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/cart-product6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/case1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/case2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/case3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/case4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/case5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/case6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/case7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/case8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/client-white1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/client-white2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/client-white3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/client-white4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/client-white5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/client-white6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/client1-hover.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/client2-hover.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/client3-hover.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/client4-hover.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/client5-hover.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/client6-hover.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/contact4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/contact5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/contact6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/contact7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/contact8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/contact9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/description-mac.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/description1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/discover.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/elements.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/eye.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/features1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/features2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/features3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/features4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/features5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/features6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/google-logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/info-box1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/info-box10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/info-box11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/info-box12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/info-box13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/info-box14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/info-box15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/info-box16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/info-box17.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/info-box18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/info-box19.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/info-box2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/info-box20.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/info-box21.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/info-box22.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/info-box23.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/info-box24.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/info-box25.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/info-box26.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/info-box27.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/info-box28.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/info-box3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/info-box4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/info-box5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/info-box6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/info-box7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/info-box8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/info-box9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/load-more-arrow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/load-more-line.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/local-seo-main.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/local-seo1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/local-seo2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/local-seo3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/logo-eye.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/mac-book.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/marketing.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/mastercard.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/menu-bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/mountain1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/mountain2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/offers1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/pattern-bg-blue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/pattern-bg-breez.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/pattern-bg-brown.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/pattern-bg-gray.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/pattern-bg-green.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/pattern-bg-lightblue.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/pattern-bg-lightgray.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/pattern-bg-lightviolet.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/pattern-bg-lime.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/pattern-bg-olive.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/pattern-bg-orange.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/pattern-bg-red.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/pattern-bg-rose.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/pattern-bg-violet.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/pay-pal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/photo-elements1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/photo-elements2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/photo-elements3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/photo-elements4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/photo-elements5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/post-author1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/post-author2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/post-author3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/post1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/post2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/post3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/post4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/ppc.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/pricing-dots.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/pricing1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/pricing2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/pricing3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/product-details.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/product-solution.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/profit.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/request.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/results-ver2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/reviews-avatar1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/reviews-avatar2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/reviews-avatar3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/seo-analysis.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/seoscore1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/seoscore2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/seoscore3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/services1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/services2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/services3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/services4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/services5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/slider-photo1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/slider-photo2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/slider-photo3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/slider-photo4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/slider-photo5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/slider1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/slider2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/slider3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/slider4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/slider5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/social-photo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/social-photo2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/solutions.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/stunning-header-photo1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/stunning-header-photo2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/stunning-header-photo3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/stunning-header-photo4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/stunning-header-photo5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/stunning-header-photo6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/subscr-gear.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/subscr-mailopen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/subscr1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/teammember1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/teammember2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/teammember3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/teammember4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/testimonial-author1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/testimonial-author2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/testimonial1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/testimonial2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/time-line-thumb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/video-format.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/video2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/img/visa.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/js/ScrollMagic.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/js/ajax-pagination.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/js/animation.velocity.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/js/crum-mega-menu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/js/donut-chart.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/js/isotope.pkgd.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/js/jquery-2.1.4.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/js/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/js/swiper.jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/js/theme-plugins.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/js/time-line.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/js/velocity.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/svg/circle-facebook.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/svg/google.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/svg/rss.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/svg/twitter.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/svg/video-control.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/app/svg/youtube.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/avatars/160432861713007375_689283847877693_2675033806294377893_n.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/avatars/default_user.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/posts/160431226411182040_770267253118308_1268402452096843303_n.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/posts/16043324840.8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/posts/16043326695.5GB.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/posts/160435048511182040_770267253118308_1268402452096843303_n.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/posts/160435078911182040_770267253118308_1268402452096843303_n.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/posts/160435080412122460_10156114574050587_5787756811464487169_n.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/posts/160435213052527175_132508501131239_4779967101987192832_n.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/posts/160435386367033292_339239773634327_4509463692248612864_n.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/posts/160435391715698278_1463780673655374_134456520403912485_n.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/posts/1604353953anya-taylor-joy-face-wallpaper-61628-63455-hd-wallpapers.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/avatars/160432852613007375_689283847877693_2675033806294377893_n.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/profiles/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/settings/settings.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/users/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/users/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/inc/footer.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/inc/header.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/frontend.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/single.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoriesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoriesController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Profile.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/database/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_01_222937_create_profiles_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_01_222937_create_profiles_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeders/UserTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/UserTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/posts/16041516140.8.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/upload/posts/16042426030.8.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/posts/16041529070.8.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/upload/posts/16042664690.8.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/posts/160417914911182040_770267253118308_1268402452096843303_n.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/upload/posts/160426803911182040_770267253118308_1268402452096843303_n.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/posts/160417923219.3 mg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/posts/160417944219.3 mg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/posts/160417961119.3 mg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/posts/160417994119.3 mg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/posts/160418001511_1_2019.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/posts/160418012319.3 mg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/posts/160418055619.3 mg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/posts/160418071119.3 mg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/avatars/default.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/upload/avatars/default_admin.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/posts/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/posts/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/posts/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/posts/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/inc/feedback.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/inc/feedback.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -187,13 +444,14 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\Complete-Blogging-CMS\resources\views\admin" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\Complete-Blogging-CMS\public\upload\avatars" />
       <recent name="C:\xampp\htdocs\Complete-Blogging-CMS\public\js" />
       <recent name="C:\xampp\htdocs\Complete-Blogging-CMS\public\css" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Complete-Blogging-CMS\public" />
+      <recent name="C:\xampp\htdocs\Complete-Blogging-CMS\resources\views\admin" />
     </key>
   </component>
   <component name="RunManager">
@@ -213,6 +471,7 @@
       <workItem from="1604074003619" duration="17023000" />
       <workItem from="1604142001199" duration="19310000" />
       <workItem from="1604235247118" duration="17170000" />
+      <workItem from="1604310024025" duration="34735000" />
     </task>
     <servers />
   </component>
@@ -223,18 +482,26 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="500" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1604092193511">
+    <state x="500" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1604338262845">
       <screen x="0" y="0" width="1920" height="1038" />
     </state>
-    <state x="500" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1038/1920.48.1280.984/-1024.38.1024.728@0.0.1920.1038" timestamp="1604092193511" />
+    <state x="500" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1038/1920.48.1280.984/-1024.38.1024.728@0.0.1920.1038" timestamp="1604338262845" />
     <state x="690" y="273" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1604239023016">
       <screen x="0" y="0" width="1920" height="1038" />
     </state>
     <state x="690" y="273" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1038/1920.48.1280.984/-1024.38.1024.728@0.0.1920.1038" timestamp="1604239023016" />
-    <state x="616" y="240" key="run.anything.popup" timestamp="1604081802690">
+    <state x="794" y="442" key="NewPhpFileDialog" timestamp="1604357998130">
       <screen x="0" y="0" width="1920" height="1038" />
     </state>
-    <state x="616" y="240" key="run.anything.popup/0.0.1920.1038/1920.48.1280.984/-1024.38.1024.728@0.0.1920.1038" timestamp="1604081802690" />
+    <state x="794" y="442" key="NewPhpFileDialog/0.0.1920.1038/1920.48.1280.984/-1024.38.1024.728@0.0.1920.1038" timestamp="1604357998130" />
+    <state x="1920" y="48" width="1296" height="1026" key="dock-window-1" timestamp="1604350067713">
+      <screen x="1920" y="48" width="1280" height="984" />
+    </state>
+    <state x="1920" y="48" width="1296" height="1026" key="dock-window-1/0.0.1920.1038/1920.48.1280.984/-1024.38.1024.728@0.0.1920.1038" timestamp="1604350067713" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1604349571666">
+      <screen x="0" y="0" width="1920" height="1038" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1038/1920.48.1280.984/-1024.38.1024.728@0.0.1920.1038" timestamp="1604349571666" />
     <state x="623" y="224" width="672" height="678" key="search.everywhere.popup" timestamp="1604238564506">
       <screen x="0" y="0" width="1920" height="1038" />
     </state>

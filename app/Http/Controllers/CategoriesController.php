@@ -42,7 +42,7 @@ class CategoriesController extends Controller
             'name' => $request->name
         ]);
         session()->flash('success', 'Category created Successfully');
-        return redirect()->back();
+        return redirect(route('category.index'));
     }
 
     /**
@@ -91,6 +91,13 @@ class CategoriesController extends Controller
      */
     public function destroy(Category $category)
     {
+        // You can set this up in migration using on delete cascade or, you can use middleware, or do it as an amateur like me here :p
+        // Delete every post with that category
+        foreach ($category->posts as $post)
+        {
+            // Since we are using softDelete we need to force it to remove it
+            $post->forceDelete();
+        }
         $category->delete();
         session()->flash('success', 'Category Deleted Successfully');
         return redirect()->back();

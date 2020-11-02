@@ -18,6 +18,8 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/toastr.min.css') }}" rel="stylesheet">
 
+{{--    Custom Styles--}}
+    @yield('styles')
 
 </head>
 <body>
@@ -65,6 +67,7 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
+                                    <a class="dropdown-item" href="{{route('profile.index')}}">Profile</a>
                                 </div>
                             </li>
                         @endguest
@@ -82,7 +85,15 @@
                             <li class="list-group-item">
                                 <a href="{{route('home')}}">Home</a>
                             </li>
+                            @if(auth()->user()->admin)
 
+                            <li class="list-group-item">
+                                <a href="{{route('user.index')}}">Users</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="{{route('user.create')}}">Create new user</a>
+                            </li>
+                            @endif
                             <li class="list-group-item">
                                 <a href="{{route('category.index')}}">Categories</a>
                             </li>
@@ -103,6 +114,7 @@
                                 <a href="{{route('post.create')}}">Create New Post</a>
                             </li>
 
+
                             <li class="list-group-item">
                                 <a href="{{route('tag.index')}}">Tags</a>
                             </li>
@@ -110,7 +122,11 @@
                                 <a href="{{route('tag.create')}}">Create New Tag</a>
                             </li>
 
-
+                            @if(auth()->user()->admin)
+                                <li class="list-group-item">
+                                    <a href="{{route('settings.index')}}">Settings</a>
+                                </li>
+                            @endif
 
                         </ul>
                     </div>
@@ -135,8 +151,10 @@
         @elseif(session()->has('error'))
         toastr.error("{{session()->get('error')}}")
         @endif
-
-
     </script>
+
+{{--  Custom Script Section--}}
+@yield('scripts')
+
 </body>
 </html>

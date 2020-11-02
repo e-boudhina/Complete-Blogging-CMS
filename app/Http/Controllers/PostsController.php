@@ -37,13 +37,14 @@ class PostsController extends Controller
         at least one category(best practise) following conventions or you simply do the logic here which is not recommended but it does the same job.
         */
         $categories = Category::all();
-        if ($categories->count()>0)
+        $tags = Tag::all();
+        if ($categories->count()>0 && $tags->count() > 0)
         {
             return view('admin.posts.create')
                 ->with('categories',$categories)
-                ->with('tags', Tag::all());
+                ->with('tags', $tags);
         }else{
-            session()->flash('info', 'You Must First Create at Least One Category Before Attempting to Create a Post');
+            session()->flash('info', 'You Must First Create at Least One Category & One Tag Before Attempting to Create a Post');
             return redirect()->back();
         }
     }
@@ -161,7 +162,7 @@ $this->validate($request, [
             //After saving the post the tags since they are linked using a relation ship are not saved
             $post->tags()->sync($request->tags); // sync will delete the previous tags and add the new ones using the pivot table
             session()->flash('success', 'Post Updated Successfully');
-            return redirect()->back();
+            return redirect(route('post.index'));
     }
 
 

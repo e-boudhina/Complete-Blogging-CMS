@@ -25,7 +25,7 @@ class UserTableSeeder extends Seeder
         ]);
         Profile::create([
             'user_id'=>$user->id,
-            'avatar' =>asset('upload/avatars/default.png'),
+            'avatar' => 'default_admin.png',
             'about' => 'Laravel enthusiast | Php Master ',
             'facebook' => 'facebook.com',
             'youtube'=> 'youtube.com',
