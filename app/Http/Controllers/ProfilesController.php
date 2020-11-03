@@ -108,8 +108,15 @@ class ProfilesController extends Controller
 
         if ($request->has('password'))
         {
-            $user->password = 'test';
-            $user->save();
+            /*
+             * If the password send in the request is different then the one stored in database
+            that means the users changed his password ( based on an assumption). else don't do anything
+            */
+            if ($user->password != $request->passowrd);
+            {
+                $user->password = Hash::make($request->password);
+                $user->save();
+            }
         }
 
         session()->flash('success', 'Your profile  has been updated Successfully');

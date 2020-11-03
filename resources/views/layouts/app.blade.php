@@ -16,6 +16,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+{{--    toestr CSS--}}
     <link href="{{ asset('css/toastr.min.css') }}" rel="stylesheet">
 
 {{--    Custom Styles--}}

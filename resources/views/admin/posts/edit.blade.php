@@ -66,3 +66,17 @@
         </div>
     </div>
 @endsection
+@section('styles')
+    <!-- include summernote css -->
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+@endsection
+@section('scripts')
+    <!-- include summernote js -->
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+    {{--    by default laravel loads jQuery no need to add it--}}
+    <script>
+        $(document).ready(function() {
+            $('#content').summernote();
+        })
+    </script>
+@endsection

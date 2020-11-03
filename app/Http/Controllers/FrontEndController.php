@@ -7,6 +7,8 @@ use App\Models\Post;
 use App\Models\Setting;
 use App\Models\Tag;
 use Illuminate\Http\Request;
+use Newsletter;
+
 
 class FrontEndController extends Controller
 {
@@ -69,5 +71,14 @@ class FrontEndController extends Controller
             ->with('posts', $posts)
             ->with('settings',Setting::first())
             ->with('categories',Category::take(4)->get());
+    }
+
+    //I already made the Mailchimp config in news letter.php file and added configuration in the .env
+    public function subscribe(Request $request)
+    {
+        Newsletter::subscribe($request->email);
+        session()->flash('subscribed', 'Successfully Subscribed. Thank You');
+        return redirect()->back();
+//        dd($request->email);
     }
 }

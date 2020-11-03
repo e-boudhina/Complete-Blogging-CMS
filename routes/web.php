@@ -16,19 +16,22 @@ use Illuminate\Support\Facades\Route;
 //Route::get('/', function () {
 //    return view('welcome');
 //});
-Route::get('/', 'FrontEndController@index');
+Route::get('/', 'FrontEndController@index')->name('main');
 Route::get('/post/{slug}', 'FrontEndController@singlePost')->name('post.single');
 Route::get('/category/{category}', 'FrontEndController@category')->name('category.single');
 
 Route::get('/tag/{tag}', 'FrontEndController@tag')->name('tag.single');
 Route::get('/search', 'FrontEndController@search')->name('search');
 
+Route::post('/subscribe', 'FrontEndController@subscribe')->name('subscribe');
+
+
 
 
 Auth::routes();
 
 Route::group(['prefix'=>'admin' ,'middleware'=>'auth'], function (){
-    Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/dashboard', 'HomeController@index')->name('home');
     //Always put the resource after your custom link because defining a resource overrides the other url, the only resource link will be taken under account
     Route::get('/post/trashed', 'PostsController@trashed')->name('post.trashed');
     Route::get('/post/restore/{post}', 'PostsController@restore')->name('post.restore');
