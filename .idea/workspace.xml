@@ -2,11 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55217dbe-a2ea-4713-9ef2-93650aed4180" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/category.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/inc/disqus.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_11_03_162851_insert_user_id_column.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/inc/addthis.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/results.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/tag.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FrontEndController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FrontEndController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/inc/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/inc/header.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/frontend.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/frontend.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/single.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/single.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
@@ -163,14 +170,15 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Complete-Blogging-CMS\resources\views\inc" />
+      <recent name="C:\xampp\htdocs\Complete-Blogging-CMS\public" />
+      <recent name="C:\xampp\htdocs\Complete-Blogging-CMS\resources\views\admin" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\Complete-Blogging-CMS\public\upload\avatars" />
       <recent name="C:\xampp\htdocs\Complete-Blogging-CMS\public\js" />
       <recent name="C:\xampp\htdocs\Complete-Blogging-CMS\public\css" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\Complete-Blogging-CMS\public" />
-      <recent name="C:\xampp\htdocs\Complete-Blogging-CMS\resources\views\admin" />
     </key>
   </component>
   <component name="RunManager">
@@ -191,7 +199,7 @@
       <workItem from="1604142001199" duration="19310000" />
       <workItem from="1604235247118" duration="17170000" />
       <workItem from="1604310024025" duration="35369000" />
-      <workItem from="1604393450470" duration="10899000" />
+      <workItem from="1604393450470" duration="19374000" />
     </task>
     <servers />
   </component>

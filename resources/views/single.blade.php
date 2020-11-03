@@ -31,7 +31,7 @@
                                     Posted by
 
                                     <div class="post__author-name fn">
-                                        <a href="#" class="post__author-link">Admin</a>
+                                        <a href="#" class="post__author-link">{{$post->user->name}}</a>
 {{--                                        don't forget to add the relation sip $post->user->name--}}
                                     </div>
 
@@ -69,22 +69,8 @@
                             </div>
                         </div>
 
-                        <div class="socials">Share:
-                            <a href="#" class="social__item">
-                                <i class="seoicon-social-facebook"></i>
-                            </a>
-                            <a href="#" class="social__item">
-                                <i class="seoicon-social-twitter"></i>
-                            </a>
-                            <a href="#" class="social__item">
-                                <i class="seoicon-social-linkedin"></i>
-                            </a>
-                            <a href="#" class="social__item">
-                                <i class="seoicon-social-google-plus"></i>
-                            </a>
-                            <a href="#" class="social__item">
-                                <i class="seoicon-social-pinterest"></i>
-                            </a>
+                        <div class=" text-center">
+                         @include('inc.addthis')
                         </div>
 
                     </article>
@@ -92,34 +78,33 @@
                     <div class="blog-details-author">
 
                         <div class="blog-details-author-thumb">
-                            <img src="{{asset('app/img/blog-details-author.png')}}" alt="Author">
+                            <img src="{{$post->user->profile->avatar}}" alt="Author" width="80px" height="80px" style="border-radius: 50%">
 
                         </div>
 
                         <div class="blog-details-author-content">
                             <div class="author-info">
 {{--                                relationship between admni and post--}}
-                                <h5 class="author-name">Philip Demarco</h5>
-                                <p class="author-info">SEO Specialist</p>
+                                <h5 class="author-name">{{$post->user->name}}</h5>
+{{--                                <p class="author-info">SEO Specialist</p>--}}
                             </div>
-                            <p class="text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-                                nonummy nibh euismod.
+                            <p class="text">{{$post->user->profile->about}}
                             </p>
                             <div class="socials">
 
-                                <a href="#" class="social__item">
-                                    <img src="{{asset('app/svg/circle-facebook.svg')}}" alt="facebook">
+                                <a href="{{$post->user->profile->facebook}}" class="social__item" target="_blank">
+                                    <img src="{{asset('app/svg/circle-facebook.svg')}}" alt="facebook" >
                                 </a>
 
-                                <a href="#" class="social__item">
-                                    <img src="{{asset('app/svg/twitter.svg')}}" alt="twitter">
-                                </a>
+{{--                                <a href="#" class="social__item">--}}
+{{--                                    <img src="{{asset('app/svg/twitter.svg')}}" alt="twitter">--}}
+{{--                                </a>--}}
 
-                                <a href="#" class="social__item">
-                                    <img src="{{asset('app/svg/google.svg')}}" alt="google">
-                                </a>
+{{--                                <a href="#" class="social__item">--}}
+{{--                                    <img src="{{asset('app/svg/google.svg')}}" alt="google">--}}
+{{--                                </a>--}}
 
-                                <a href="#" class="social__item">
+                                <a href="{{$post->user->profile->youtube}}" class="social__item" target="_blank">
                                     <img src="{{asset('app/svg/youtube.svg')}}" alt="youtube">
                                 </a>
 
@@ -189,7 +174,7 @@
 
                             <div class="tags-wrap">
                                 @foreach($tags as $tag)
-                                <a href="#" class="w-tags-item">{{$tag->name}}</a>
+                                <a href="{{route('tag.single',$tag->id)}}" class="w-tags-item">{{$tag->name}}</a>
                                 @endforeach
                             </div>
                         </div>

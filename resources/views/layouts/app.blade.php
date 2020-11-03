@@ -151,9 +151,10 @@
         @elseif(session()->has('error'))
         toastr.error("{{session()->get('error')}}")
         @endif
+
     </script>
 
-{{--  Custom Script Section--}}
+    {{--  Custom Script Section--}}
 @yield('scripts')
 
 </body>

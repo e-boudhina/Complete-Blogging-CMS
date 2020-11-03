@@ -81,7 +81,8 @@ $this->validate($request, [
             'featured' =>$featured_new_name,
             'category_id' => $request->category_id,
             'slug'=>Str::slug($request->title),
-          'tags' => 'required'
+          'tags' => 'required',
+          'user_id' =>auth()->user()->id
         ]);
 
         //Using tags

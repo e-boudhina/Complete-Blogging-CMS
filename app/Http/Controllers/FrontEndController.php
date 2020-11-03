@@ -49,4 +49,25 @@ class FrontEndController extends Controller
                 ->with('settings',Setting::first())
                 ->with('categories',Category::take(4)->get());
     }
+    public function tag(Tag $tag)
+    {
+//        dd('here');
+//        dd($category);
+            return view('tag')
+                ->with('tag', $tag)
+                ->with('settings',Setting::first())
+                ->with('tags',Tag::take(4)->get())
+                ->with('categories',Category::take(4)->get());
+    }
+
+    public function search(Request $request)
+    {
+//        dd($request->query);
+        $posts = Post::where('title','like',   '%'.$request->myquery.  '%')->get();
+        return view('results')
+            ->with('title', 'Search results for : '.$request->myquery)
+            ->with('posts', $posts)
+            ->with('settings',Setting::first())
+            ->with('categories',Category::take(4)->get());
+    }
 }
