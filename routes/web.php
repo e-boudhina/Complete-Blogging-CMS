@@ -17,7 +17,9 @@ use Illuminate\Support\Facades\Route;
 //    return view('welcome');
 //});
 Route::get('/', 'FrontEndController@index');
-Route::get('/{slug}', 'FrontEndController@singlePost')->name('post.single');
+Route::get('/post/{slug}', 'FrontEndController@singlePost')->name('post.single');
+Route::get('/category/{category}', 'FrontEndController@category')->name('category.single');
+
 
 
 Auth::routes();

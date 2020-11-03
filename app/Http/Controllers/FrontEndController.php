@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\Setting;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 
 class FrontEndController extends Controller
@@ -26,11 +27,26 @@ class FrontEndController extends Controller
     public function singlePost($slug)
     {
         $post = Post::where('slug',$slug)->first();
+        $next_id = Post::where('id','>',$post->id)->min('id');
+        $previous_id = Post::where('id','<',$post->id)->max('id');
+
 //        dd($post);
         return view('single')
             ->with('post',$post)
+            ->with('tags',Tag::all())
             ->with('settings',Setting::first())
-            ->with('categories',Category::take(4)->get());
+            ->with('categories',Category::take(4)->get())
+            ->with('next',Post::find($next_id))
+            ->with('previous',Post::find($previous_id));
     }
 
+    // if you like to use slugs you can do it's much more readable
+    public function category(Category $category)
+    {
+//        dd($category);
+            return view('category')
+                ->with('category', $category)
+                ->with('settings',Setting::first())
+                ->with('categories',Category::take(4)->get());
+    }
 }
