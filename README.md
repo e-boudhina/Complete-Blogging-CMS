@@ -7,55 +7,154 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+## About This Laravel Project:  
+ 
+* php artisan --version => Laravel Framework 8.12.3
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+This is a blog platforme that allows a user to authenticate, create posts with a thumbnails, the blog contains posts which are composed of :
+id, title, slug to use instead of id for clear meaning and for search queries, content( body of post), category ID, post image (nameed 'featured').
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+* Users must First register in order to get access and then perform C.R.U.D operations.
+* 6 posts must be created for the blog to work without errors. 
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+To load a a default user and load basic settings run:
+* php artisan migrate --seed 
+   
+# This project uses the following external libraries: 
 
-## Learning Laravel
+* https://github.com/CodeSeven/toastr for displaying session messages. 
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+* https://summernote.org/ summernote editor to edit post body.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+* https://github.com/spatie/laravel-newsletter which provides an easy way to integrate MailChimp with Laravel.
 
-## Laravel Sponsors
+To Sign-up for a Mailchilp account visit:
+* https://mailchimp.com/
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Blog Routes:
 
-### Premium Partners
+* php artisan route:list
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[OP.GG](https://op.gg)**
 
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+| Domain | Method    | URI                            | Name             | Action                                                                 | Middleware |
+|--------|-----------|--------------------------------|------------------|------------------------------------------------------------------------|------------|
+|        | GET|HEAD  | /                              | main             | App\Http\Controllers\FrontEndController@index                          | web        |
+|        | POST      | admin/category                 | category.store   | App\Http\Controllers\CategoriesController@store                        | web        |
+|        |           |                                |                  |                                                                        | auth       |
+|        | GET|HEAD  | admin/category                 | category.index   | App\Http\Controllers\CategoriesController@index                        | web        |
+|        |           |                                |                  |                                                                        | auth       |
+|        | GET|HEAD  | admin/category/create          | category.create  | App\Http\Controllers\CategoriesController@create                       | web        |
+|        |           |                                |                  |                                                                        | auth       |
+|        | DELETE    | admin/category/{category}      | category.destroy | App\Http\Controllers\CategoriesController@destroy                      | web        |
+|        |           |                                |                  |                                                                        | auth       |
+|        | PUT|PATCH | admin/category/{category}      | category.update  | App\Http\Controllers\CategoriesController@update                       | web        |
+|        |           |                                |                  |                                                                        | auth       |
+|        | GET|HEAD  | admin/category/{category}      | category.show    | App\Http\Controllers\CategoriesController@show                         | web        |
+|        |           |                                |                  |                                                                        | auth       |
+|        | GET|HEAD  | admin/category/{category}/edit | category.edit    | App\Http\Controllers\CategoriesController@edit                         | web        |
+|        |           |                                |                  |                                                                        | auth       |
+|        | GET|HEAD  | admin/dashboard                | home             | App\Http\Controllers\HomeController@index                              | web        |
+|        |           |                                |                  |                                                                        | auth       |
+|        | POST      | admin/post                     | post.store       | App\Http\Controllers\PostsController@store                             | web        |
+|        |           |                                |                  |                                                                        | auth       |
+|        | GET|HEAD  | admin/post                     | post.index       | App\Http\Controllers\PostsController@index                             | web        |
+|        |           |                                |                  |                                                                        | auth       |
+|        | GET|HEAD  | admin/post/create              | post.create      | App\Http\Controllers\PostsController@create                            | web        |
+|        |           |                                |                  |                                                                        | auth       |
+|        | GET|HEAD  | admin/post/restore/{post}      | post.restore     | App\Http\Controllers\PostsController@restore                           | web        |
+|        |           |                                |                  |                                                                        | auth       |
+|        | GET|HEAD  | admin/post/trashed             | post.trashed     | App\Http\Controllers\PostsController@trashed                           | web        |
+|        |           |                                |                  |                                                                        | auth       |
+|        | GET|HEAD  | admin/post/{post}              | post.show        | App\Http\Controllers\PostsController@show                              | web        |
+|        |           |                                |                  |                                                                        | auth       |
+|        | DELETE    | admin/post/{post}              | post.destroy     | App\Http\Controllers\PostsController@destroy                           | web        |
+|        |           |                                |                  |                                                                        | auth       |
+|        | PUT|PATCH | admin/post/{post}              | post.update      | App\Http\Controllers\PostsController@update                            | web        |
+|        |           |                                |                  |                                                                        | auth       |
+|        | GET|HEAD  | admin/post/{post}/edit         | post.edit        | App\Http\Controllers\PostsController@edit                              | web        |
+|        |           |                                |                  |                                                                        | auth       |
+|        | POST      | admin/profile                  | profile.store    | App\Http\Controllers\ProfilesController@store                          | web        |
+|        |           |                                |                  |                                                                        | auth       |
+|        | GET|HEAD  | admin/profile                  | profile.index    | App\Http\Controllers\ProfilesController@index                          | web        |
+|        |           |                                |                  |                                                                        | auth       |
+|        | GET|HEAD  | admin/profile/create           | profile.create   | App\Http\Controllers\ProfilesController@create                         | web        |
+|        |           |                                |                  |                                                                        | auth       |
+|        | GET|HEAD  | admin/profile/{profile}        | profile.show     | App\Http\Controllers\ProfilesController@show                           | web        |
+|        |           |                                |                  |                                                                        | auth       |
+|        | DELETE    | admin/profile/{profile}        | profile.destroy  | App\Http\Controllers\ProfilesController@destroy                        | web        |
+|        |           |                                |                  |                                                                        | auth       |
+|        | PUT|PATCH | admin/profile/{profile}        | profile.update   | App\Http\Controllers\ProfilesController@update                         | web        |
+|        |           |                                |                  |                                                                        | auth       |
+|        | GET|HEAD  | admin/profile/{profile}/edit   | profile.edit     | App\Http\Controllers\ProfilesController@edit                           | web        |
+|        |           |                                |                  |                                                                        | auth       |
+|        | GET|HEAD  | admin/settings                 | settings.index   | App\Http\Controllers\SettingsController@index                          | web        |
+|        |           |                                |                  |                                                                        | auth       |
+|        |           |                                |                  |                                                                        | admin      |
+|        | POST      | admin/settings/update          | settings.update  | App\Http\Controllers\SettingsController@update                         | web        |
+|        |           |                                |                  |                                                                        | auth       |
+|        |           |                                |                  |                                                                        | admin      |
+|        | POST      | admin/tag                      | tag.store        | App\Http\Controllers\TagsController@store                              | web        |
+|        |           |                                |                  |                                                                        | auth       |
+|        | GET|HEAD  | admin/tag                      | tag.index        | App\Http\Controllers\TagsController@index                              | web        |
+|        |           |                                |                  |                                                                        | auth       |
+|        | GET|HEAD  | admin/tag/create               | tag.create       | App\Http\Controllers\TagsController@create                             | web        |
+|        |           |                                |                  |                                                                        | auth       |
+|        | DELETE    | admin/tag/{tag}                | tag.destroy      | App\Http\Controllers\TagsController@destroy                            | web        |
+|        |           |                                |                  |                                                                        | auth       |
+|        | PUT|PATCH | admin/tag/{tag}                | tag.update       | App\Http\Controllers\TagsController@update                             | web        |
+|        |           |                                |                  |                                                                        | auth       |
+|        | GET|HEAD  | admin/tag/{tag}                | tag.show         | App\Http\Controllers\TagsController@show                               | web        |
+|        |           |                                |                  |                                                                        | auth       |
+|        | GET|HEAD  | admin/tag/{tag}/edit           | tag.edit         | App\Http\Controllers\TagsController@edit                               | web        |
+|        |           |                                |                  |                                                                        | auth       |
+|        | POST      | admin/user                     | user.store       | App\Http\Controllers\UsersController@store                             | web        |
+|        |           |                                |                  |                                                                        | auth       |
+|        |           |                                |                  |                                                                        | admin      |
+|        | GET|HEAD  | admin/user                     | user.index       | App\Http\Controllers\UsersController@index                             | web        |
+|        |           |                                |                  |                                                                        | auth       |
+|        |           |                                |                  |                                                                        | admin      |
+|        | GET|HEAD  | admin/user/create              | user.create      | App\Http\Controllers\UsersController@create                            | web        |
+|        |           |                                |                  |                                                                        | auth       |
+|        |           |                                |                  |                                                                        | admin      |
+|        | GET|HEAD  | admin/user/makeAdmin/{user}    | user.admin       | App\Http\Controllers\UsersController@admin                             | web        |
+|        |           |                                |                  |                                                                        | auth       |
+|        |           |                                |                  |                                                                        | admin      |
+|        | GET|HEAD  | admin/user/makeDefault/{user}  | user.revoke      | App\Http\Controllers\UsersController@revoke                            | web        |
+|        |           |                                |                  |                                                                        | auth       |
+|        |           |                                |                  |                                                                        | admin      |
+|        | DELETE    | admin/user/{user}              | user.destroy     | App\Http\Controllers\UsersController@destroy                           | web        |
+|        |           |                                |                  |                                                                        | auth       |
+|        |           |                                |                  |                                                                        | admin      |
+|        | PUT|PATCH | admin/user/{user}              | user.update      | App\Http\Controllers\UsersController@update                            | web        |
+|        |           |                                |                  |                                                                        | auth       |
+|        |           |                                |                  |                                                                        | admin      |
+|        | GET|HEAD  | admin/user/{user}              | user.show        | App\Http\Controllers\UsersController@show                              | web        |
+|        |           |                                |                  |                                                                        | auth       |
+|        |           |                                |                  |                                                                        | admin      |
+|        | GET|HEAD  | admin/user/{user}/edit         | user.edit        | App\Http\Controllers\UsersController@edit                              | web        |
+|        |           |                                |                  |                                                                        | auth       |
+|        |           |                                |                  |                                                                        | admin      |
+|        | GET|HEAD  | api/user                       |                  | Closure                                                                | api        |
+|        |           |                                |                  |                                                                        | auth:api   |
+|        | GET|HEAD  | category/{category}            | category.single  | App\Http\Controllers\FrontEndController@category                       | web        |
+|        | POST      | login                          |                  | App\Http\Controllers\Auth\LoginController@login                        | web        |
+|        |           |                                |                  |                                                                        | guest      |
+|        | GET|HEAD  | login                          | login            | App\Http\Controllers\Auth\LoginController@showLoginForm                | web        |
+|        |           |                                |                  |                                                                        | guest      |
+|        | POST      | logout                         | logout           | App\Http\Controllers\Auth\LoginController@logout                       | web        |
+|        | GET|HEAD  | password/confirm               | password.confirm | App\Http\Controllers\Auth\ConfirmPasswordController@showConfirmForm    | web        |
+|        |           |                                |                  |                                                                        | auth       |
+|        | POST      | password/confirm               |                  | App\Http\Controllers\Auth\ConfirmPasswordController@confirm            | web        |
+|        |           |                                |                  |                                                                        | auth       |
+|        | POST      | password/email                 | password.email   | App\Http\Controllers\Auth\ForgotPasswordController@sendResetLinkEmail  | web        |
+|        | POST      | password/reset                 | password.update  | App\Http\Controllers\Auth\ResetPasswordController@reset                | web        |
+|        | GET|HEAD  | password/reset                 | password.request | App\Http\Controllers\Auth\ForgotPasswordController@showLinkRequestForm | web        |
+|        | GET|HEAD  | password/reset/{token}         | password.reset   | App\Http\Controllers\Auth\ResetPasswordController@showResetForm        | web        |
+|        | GET|HEAD  | post/{slug}                    | post.single      | App\Http\Controllers\FrontEndController@singlePost                     | web        |
+|        | POST      | register                       |                  | App\Http\Controllers\Auth\RegisterController@register                  | web        |
+|        |           |                                |                  |                                                                        | guest      |
+|        | GET|HEAD  | register                       | register         | App\Http\Controllers\Auth\RegisterController@showRegistrationForm      | web        |
+|        |           |                                |                  |                                                                        | guest      |
+|        | GET|HEAD  | search                         | search           | App\Http\Controllers\FrontEndController@search                         | web        |
+|        | POST      | subscribe                      | subscribe        | App\Http\Controllers\FrontEndController@subscribe                      | web        |
+|        | GET|HEAD  | tag/{tag}                      | tag.single       | App\Http\Controllers\FrontEndController@tag                            | web        |
