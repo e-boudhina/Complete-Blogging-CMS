@@ -77,7 +77,7 @@ $this->validate($request, [
 
       $post =  Post::create([
             'title'=>$request->title,
-            'content'=> $request->content,
+            'content'=> $request->get('content'),
             'featured' =>$featured_new_name,
             'category_id' => $request->category_id,
             'slug'=>Str::slug($request->title),
@@ -143,20 +143,28 @@ $this->validate($request, [
 
         //Check if user uploaded a new image
         if ($request->hasFile('featured')) {
-            $featured = $request->file('featured');
-            $featured_new_name = time() . $featured->getClientOriginalName();
+            // do not use asset() it's different than public path
+            if (file_exists(public_path('upload/posts/'.basename($post->featured)))) {
+//                dd("file name exists :".basename($post->featured));
+                $featured = $request->file('featured');
+                $featured_new_name = time() . $featured->getClientOriginalName();
 
-            $featured->move('upload/posts',$featured_new_name);
+                $featured->move('upload/posts', $featured_new_name);
 
-//            File::delete($post->featured);
+                // you can not delete using the full path
+                // File::delete($post->featured);
+                // Instead use this:
+                File::delete(public_path('upload/posts/'.basename($post->featured)));
 
-            //changing name
-            $post->featured = $featured_new_name;
-
+                //changing name
+                $post->featured = $featured_new_name;
+            }else{
+                dd("File does not exist :".basename($post->featured));
+            }
         }
         // This will always gets executed
             $post->title = $request->title;
-            $post->content = $request->content;
+            $post->content = $request->get('content');
             $post->category_id = $request->category_id;
             $post->save();
 

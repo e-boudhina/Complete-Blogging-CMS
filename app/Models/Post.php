@@ -18,12 +18,16 @@ class Post extends Model
 
     /*
      This function executes automatically in post index ( get"AttributeName"Attribute) read about it - check documentation
-     Well this is called an Accessor and mutators not like in "Java", they allow you to change the data when it is retrieved from a model and set it in the way
-    or format you like to see it in before it gets displayed in the view which is quite useful same as using pipeline in Angular 10 value | date(format)/
+     Well this is called an Accessor, or mutators not like in "Java", they allow you to change the data when it is retrieved from a model and set it in the way
+    or format you like to see it in before it gets displayed in the view which is quite useful same as using pipeline in Angular 10 value | date(format)
     */
+//    public function featured_field_name_only(){
+//        return $this->featured;
+//    }
     public function getFeaturedAttribute($featured){
         return asset('upload/posts/'.$featured);
     }
+
 
     public function category()
     {

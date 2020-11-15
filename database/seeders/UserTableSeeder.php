@@ -20,7 +20,7 @@ class UserTableSeeder extends Seeder
             'name' => 'e-boudhina',
             'email' => 'e-boudhina@live.fr',
             'email_verified_at' => now(),
-            'password' => Hash::make('07219567'),
+            'password' => Hash::make('admin'),
             'admin'=>1,
         ]);
         Profile::create([

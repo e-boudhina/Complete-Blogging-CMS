@@ -110,7 +110,7 @@
                 <article class="hentry post post-standard has-post-thumbnail sticky">
 
                     <div class="post-thumb">
-                        <img src="{{$second_post->featured}}" alt="{{$second_post->title}}">
+                        <img src="{{ isset($second_post->featured)?$second_post->featured:''}}" alt="{{isset($second_post->title)?$second_post->title:''}}">
                         <div class="overlay"></div>
                         <a href="{{$second_post->featured}}" class="link-image js-zoom-image">
                             <i class="seoicon-zoom"></i>

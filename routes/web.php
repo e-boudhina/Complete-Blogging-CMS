@@ -25,22 +25,19 @@ Route::get('/search', 'FrontEndController@search')->name('search');
 
 Route::post('/subscribe', 'FrontEndController@subscribe')->name('subscribe');
 
-
-
-
 Auth::routes();
 
 Route::group(['prefix'=>'admin' ,'middleware'=>'auth'], function (){
     Route::get('/dashboard', 'HomeController@index')->name('home');
-    //Always put the resource after your custom link because defining a resource overrides the other url, the only resource link will be taken under account
+
+    //Always put the resource after your custom link because defining a resource overrides the other urls, only resource link will be taken under account
+    //All cutsom routes will be ignored
     Route::get('/post/trashed', 'PostsController@trashed')->name('post.trashed');
     Route::get('/post/restore/{post}', 'PostsController@restore')->name('post.restore');
 
-    // We injecting middleware admin in the construct method in users controller that way all the method will be accessed only by an admin
+    // I injected the middleware admin in the construct method in users controller that way all the method will be accessed only by an admin
     Route::get('/user/makeAdmin/{user}', 'UsersController@admin')->name('user.admin');
     Route::get('/user/makeDefault/{user}', 'UsersController@revoke')->name('user.revoke');
-
-
 
     Route::resource('/user', 'UsersController');
 
@@ -53,9 +50,7 @@ Route::group(['prefix'=>'admin' ,'middleware'=>'auth'], function (){
 
     Route::resource('/post', 'PostsController');
 
-
     Route::resource('/category', 'CategoriesController');
-
 
 
 });
