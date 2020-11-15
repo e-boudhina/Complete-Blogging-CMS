@@ -7,20 +7,21 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About This Laravel Project:  
+# About This Laravel Project:  
  
-* php artisan --version => Laravel Framework 8.12.3
+* php artisan --version 
+=> Laravel Framework 8.12.3
 
-This is a blog platforme that allows a user to authenticate, create posts with a thumbnails, the blog contains posts which are composed of :
-id, title, slug to use instead of id for clear meaning and for search queries, content( body of post), category ID, post image (nameed 'featured').
+This is a blog platforme that allows a user to authenticate, create posts with a thumbnails, the blog contains posts which are composed of :<br>
+An id | A title | A slug to use instead of the 'id' parameter for clear meaning and for search queries | The content( body of post)| A category ID |The post image (nameed 'featured').
 
-* Users must First register in order to get access and then perform C.R.U.D operations.
+* Users must first register in order to get access and then perform C.R.U.D operations.
 * 6 posts must be created for the blog to work without errors. 
 
 To load a a default user and load basic settings run:
 * php artisan migrate --seed 
    
-# This project uses the following external libraries: 
+## This project uses the following external libraries: 
 
 * https://github.com/CodeSeven/toastr for displaying session messages. 
 
