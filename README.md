@@ -23,11 +23,11 @@ To load a a default user and load basic settings run:
    
 ## This project uses the following external libraries: 
 
-* https://github.com/CodeSeven/toastr for displaying session messages. 
+* https://github.com/CodeSeven/toastr => Toastr for displaying session messages. 
 
-* https://summernote.org/ summernote editor to edit post body.
+* https://summernote.org/ => summernote editor to edit post body.
 
-* https://github.com/spatie/laravel-newsletter which provides an easy way to integrate MailChimp with Laravel.
+* https://github.com/spatie/laravel-newsletter => which provides an easy way to integrate MailChimp with Laravel.
 
 To Sign-up for a Mailchilp account visit:
 * https://mailchimp.com/
